@@ -5,22 +5,23 @@
     <!-- end owl-carousel -->
     <div class="row">
         <div class="col-md-9">
+
             @foreach($categories as $category)
-                <div class="row">
-                    <div class="col-md-12">
-                        <div style="padding-bottom: 20px">
-                            <hr>
-                            <div style="margin-top: 20px">
+                @if($category->books_count > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div style="padding-bottom: 20px">
+                                <hr>
+                                <div style="margin-top: 20px">
                                  <span style="font-size: 18px; font-weight: bolder;">
                                          {{$category->name}}
                                  </span>
-                                <a href="{{route('books.index',['category_name'=>$category->name])}}"
-                                   style="float: left; font-weight: bold;">مشاهدة الكل</a>
-                            </div>
+                                    <a href="{{route('books.index',['category_name'=>$category->name])}}"
+                                       style="float: left; font-weight: bold;">مشاهدة الكل</a>
+                                </div>
 
-                            <div class="owl-carousel owl-theme" style="padding-top: 10px ; padding-bottom: 50px;">
-                                @if($books->count() > 0)
-                                    @foreach($books as $book)
+                                <div class="owl-carousel owl-theme" style="padding-top: 10px ; padding-bottom: 50px;">
+                                    @foreach($category->books as $book)
                                         <div class="item">
                                             <div class="thumbnail">
                                                 <img
@@ -28,21 +29,23 @@
                                                     alt="...">
                                                 <div class="caption"
                                                      style="background-color: #DDD; padding: 10px; padding-top:20px;">
-                                                    <h3><a href="{{route('books.show',$book->id)}}">{{$book->name}}</a></h3>
+                                                    <h3><a href="{{route('books.show',$book->id)}}">{{$book->name}}</a>
+                                                    </h3>
 
                                                     <p>
                                                         المؤلف :
                                                         @foreach($book->authors as $author)
                                                             <a href="{{route('authors.show',$author->id)}}">
                                                                 <snap style="color: #ff7361">{{$author->name}} </snap>
-                                                                </a>@if(!$loop->last), @endif
+                                                            </a>@if(!$loop->last), @endif
                                                         @endforeach
                                                     </p>
                                                     <p>تاريخ النشر : {{$book->year}} </p>
                                                     <p>
-                                                        <a href="{{url($book->file_path)}}" class="button color small " target="_blank"
+                                                        <a href="{{url($book->file_path)}}" class="button color small "
+                                                           target="_blank"
                                                            style="background-color: green;">
-                                                              <span class="icon-download-alt"></span>
+                                                            <span class="icon-download-alt"></span>
                                                             تحميل
                                                         </a>
                                                         @auth()
@@ -67,20 +70,11 @@
                                             </div>
                                         </div>
                                     @endforeach
-                                @else
-                                    <div class="col">
-
-                                    </div>
-                                @endif
-
-
+                                </div>
                             </div>
-
-                            {{--@endforeach
-                            @endif--}}
                         </div>
                     </div>
-                </div>
+                @endif
             @endforeach
         </div>
         @include('site.partials.sidebar')

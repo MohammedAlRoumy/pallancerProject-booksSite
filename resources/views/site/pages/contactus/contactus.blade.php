@@ -16,13 +16,12 @@
             @endforeach
         </div>
     @endif
-
-    {{-- <section class="container main-content page-full-width" style="margin-top: 20px; margin-bottom: 60px;">
-         <div class="row">
-             <div class="contact-us" style="padding: 20px;">--}}
+<div class="row">
+    <div class="col-md-12">
+        <div class="boxedtitle page-title"><h2>اتصل بنا</h2></div>
+    </div>
     <div class="col-md-12">
         <div class="page-content">
-            <h2>اتصل بنا</h2>
 
             <form class="" method="POST" action="">
                 @csrf()
@@ -43,8 +42,7 @@
             </form>
 
         </div><!-- End page-content -->
-    </div><!-- End col-md-6 -->
-    {{--          </div><!-- End contact-us -->
-      </div><!-- End row -->
-    </section><!-- End container -->--}}
+    </div>
+</div>
+
 @endsection

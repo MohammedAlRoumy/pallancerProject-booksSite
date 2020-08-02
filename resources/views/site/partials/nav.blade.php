@@ -1,15 +1,5 @@
 <nav class="navigation">
     <ul>
-        {{--<li>
-            <div class="header-search">
-                <form>
-                    <input type="text" value="أبحث هنا ..." onfocus="if(this.value=='أبحث هنا ...')this.value='';"
-                           onblur="if(this.value=='')this.value='أبحث هنا ...';"
-                           style="width: 200px;">
-                    <button type="submit" class="search-submit"></button>
-                </form>
-            </div>
-        </li>--}}
         <li><a href="{{route('welcome')}}">الرئيسية</a></li>
         <li><a href="{{route('categories')}}">التصنيفات</a></li>
         <li><a href="{{route('authors.index')}}">المؤلفون</a></li>
@@ -29,18 +19,7 @@
                             </span>
 
             </li>
-           {{-- <li class="nav-item mr-2">
-                <a href="--}}{{--{{route('movies.index',["favorite"=>1])}}--}}{{--" class="nav-link text-white" style="position: relative">
-                    <i class="fa fa-heart"></i>
-                    <span class="bg-primary text-white d-flex justify-content-center align-items-center"
-                          style="position: absolute; top: 0; right: -15px; width: 30px; height: 20px; border-radius: 50px"
-                          id="nav__fav-count"
-                          data-fav-count="--}}{{--{{auth()->user()->movies_count}}--}}{{--"
-                    >
-                              9+  --}}{{--{{auth()->user()->movies_count > 9 ? '+9':auth()->user()->movies_count }}--}}{{--
-                            </span>
-                </a>
-            </li>--}}
+
         @endauth
         @auth
             <li><a>{{ Auth::user()->name }}</a>
@@ -48,7 +27,7 @@
                     <li>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();"><i class="fa fa-sign-out fa-lg"></i>
-                            {{ __('Logout') }}
+                            {{ __('تسجيل خروج') }}
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
@@ -60,7 +39,7 @@
 
                             <a class="dropdown-item" href="{{ route('dashboard.welcome') }}">
                                 <i class="fa fa-tachometer-alt"></i>
-                                Dashboard
+                                {{ __('لوحة التحكم') }}
                             </a>
                         </li>
                     @endif
@@ -69,20 +48,4 @@
         @else
             <li><a href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a></li>
         @endauth
-
-
-
-
-        {{--        <li>@auth()
-                    <a href="{{route('login')}}">تسجيل دخول</a></li>
-
-                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();"><i class="fa fa-sign-out fa-lg"></i>
-                    {{ __('Logout') }}
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-
-                </a>--}}
-    </ul>
 </nav>

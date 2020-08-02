@@ -38,6 +38,15 @@
             </div>
         </div><!-- end of col -->
 
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-small danger coloured-icon"><i class="icon fa fa-pencil fa-3x"></i>
+                <div class="info">
+                    <h4>Authors</h4>
+                    <p><b>{{ $authors_count }}</b></p>
+                </div>
+            </div>
+        </div><!-- end of col -->
+
 
     </div><!-- end of row -->
 

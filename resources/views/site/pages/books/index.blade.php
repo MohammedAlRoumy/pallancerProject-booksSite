@@ -45,7 +45,7 @@
                 @endforeach
             @else
                 <div class="col">
-                    <h5 class="fw-300">Sorry no movies found</h5>
+                    <h5 class="fw-300">للأسف لايوجد كتب لعرضها</h5>
                 </div
             @endif
         </div>

@@ -10,7 +10,7 @@
                 <div class="page-content page-shortcode">
                     <div class="box_icon">
                         <div class="t_center">
-                            <h3> {{$category->name}}</h3>
+                            <a href="{{route('books.index',['category_name'=>$category->name])}}"><h3> {{$category->name}}</h3></a>
                         </div>
                     </div>
                 </div>

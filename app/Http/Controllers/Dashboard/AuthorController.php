@@ -21,7 +21,7 @@ class AuthorController extends Controller
 
 //        $categories = Category::whenSearch(request()->search)->paginate(5);
         $authors = Author::whenSearch(request()->search)
-            ->withCount('books')->paginate(5);
+            ->withCount('books')->paginate();
         return view('dashboard.authors.index', compact('authors'));
 
     }

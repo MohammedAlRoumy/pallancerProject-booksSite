@@ -32,7 +32,7 @@ class RoleController extends Controller
             ->whenSearch(request()->search)
             ->with('permissions')
             ->withCount('users')
-            ->paginate(5);
+            ->paginate();
         return view('dashboard.roles.index', compact('roles'));
 
     }

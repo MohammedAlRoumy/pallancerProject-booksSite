@@ -39,7 +39,7 @@ class BookController extends Controller
             ->whenAuthor(request()->author)
             ->with('authors')
             ->with('categories')
-            ->withCount('users')->paginate(5);
+            ->withCount('users')->paginate();
         return view('dashboard.books.index', compact('books', 'categories','authors'));
 
     }

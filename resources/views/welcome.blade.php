@@ -11,7 +11,7 @@
 
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <title> قبس </title>
+    <title> زاد </title>
     <meta name="description" content="">
     <meta name="author" content="vbegy">
 
