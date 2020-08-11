@@ -84,7 +84,7 @@
                                         المؤلف :
                                         @foreach($related_book->authors as $author)
                                             <a href="{{route('authors.show',$author->id)}}">
-                                                <snap style="color: #ff7361">{{$author->name}} </snap></a>@if(!$loop->last), @endif
+                                                <span style="color: #ff7361">{{$author->name}} </span></a>@if(!$loop->last), @endif
                                         @endforeach
                                     </p>
                                     <p>تاريخ النشر : {{$related_book->year}} </p>

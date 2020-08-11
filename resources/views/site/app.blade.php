@@ -11,7 +11,7 @@
 
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <title> مكتبة </title>
+    <title> زاد </title>
     <meta name="description" content="قبس - مكتبة إلكترونية">
 
     <!-- Mobile Specific Metas -->

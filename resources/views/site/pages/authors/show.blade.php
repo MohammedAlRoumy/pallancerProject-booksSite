@@ -38,8 +38,8 @@
                                 <p>
                                     التصنيف :
                                     @foreach($book->categories as $category)
-                                        <a href="">
-                                            <snap style="color: #ff7361">{{$category->name}} </snap></a>@if(!$loop->last), @endif
+                                        <a href="{{route('books.index',['category_name'=>$category->name])}}">
+                                            <span style="color: #ff7361">{{$category->name}} </span></a>@if(!$loop->last), @endif
                                     @endforeach
                                 </p>
 

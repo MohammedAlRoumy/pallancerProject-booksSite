@@ -13,7 +13,7 @@
                             المؤلف :
                             @foreach($book->authors as $author)
                                 <a href="{{route('authors.show',$author->id)}}">
-                                    <snap style="color: #ff7361">{{$author->name}} </snap>
+                                    <span style="color: #ff7361">{{$author->name}} </span>
                                 </a>@if(!$loop->last), @endif
                             @endforeach
                         </p>
@@ -21,7 +21,7 @@
                             التصنيف :
                             @foreach($book->categories as $category)
                                 <a href="{{route('books.index',['category_name'=>$category->name])}}">
-                                    <snap style="color: #ff7361">{{$category->name}} </snap>@if(!$loop->last), @endif
+                                    <span style="color: #ff7361">{{$category->name}} </span>@if(!$loop->last), @endif
                                 </a>
                             @endforeach
                         </p>
