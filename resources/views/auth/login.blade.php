@@ -88,8 +88,8 @@
 
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <title> قبس </title>
-    <meta name="description" content="قبس || واحة المعرفة">
+    <title> زاد </title>
+    <meta name="description" content="زاد || واحة المعرفة">
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">

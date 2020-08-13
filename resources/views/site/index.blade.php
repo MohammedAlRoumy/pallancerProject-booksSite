@@ -44,7 +44,7 @@
                                                     <p>
                                                         <a href="{{url($book->file_path)}}" class="button color small "
                                                            target="_blank"
-                                                           style="background-color: green;">
+                                                           style="background-color: green;" download>
                                                             <span class="icon-download-alt"></span>
                                                             تحميل
                                                         </a>

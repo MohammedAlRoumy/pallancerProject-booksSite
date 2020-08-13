@@ -39,27 +39,33 @@
                                     التصنيف :
                                     @foreach($book->categories as $category)
                                         <a href="{{route('books.index',['category_name'=>$category->name])}}">
-                                            <span style="color: #ff7361">{{$category->name}} </span></a>@if(!$loop->last), @endif
+                                            <span
+                                                style="color: #ff7361">{{$category->name}} </span></a>@if(!$loop->last)
+                                            , @endif
                                     @endforeach
                                 </p>
 
                                 <p>{{Str::limit($book->description, 50)}}</p>
                                 <p>
-                                    <a class="button color small signup" style="background-color: green;">
-                                                    <span
-                                                        class="icon-download-alt"></span>
-                                        تحميل</a>
+                                    <a href="{{url($book->file_path)}}" class="button color small "
+                                       target="_blank"
+                                       style="background-color: green;" download>
+                                        <span class="icon-download-alt"></span>
+                                        تحميل
+                                    </a>
                                     @auth()
-                                        <a class="button color small add_fav-icon book__fav-btn" style="float: left">
-                                <span
-                                    class=" {{$book->is_favored ? 'icon-heart':'icon-heart-empty'}} book__fav-icon book-{{$book->id}}"
-                                    data-book-id="{{$book->id}}"
-                                    data-url="{{route('books.toggle_favorite',$book->id)}}">
+                                        <a class="button color small add_fav-icon book__fav-btn"
+                                           style="float: left">
+                                                                <span
+                                                                    class=" {{$book->is_favored ? 'icon-heart':'icon-heart-empty'}} book__fav-icon book-{{$book->id}}"
+                                                                    data-book-id="{{$book->id}}"
+                                                                    data-url="{{route('books.toggle_favorite',$book->id)}}">
 
-                                </span>
+                                                                </span>
                                         </a>
                                     @else
-                                        <a href="{{route('login')}}" class="button color small add_fav-icon"
+                                        <a href="{{route('login')}}"
+                                           class="button color small add_fav-icon"
                                            style="float: left">
                                             <span class="icon-heart-empty"></span>
                                         </a>

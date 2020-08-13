@@ -23,7 +23,7 @@
                                 <p>{{Str::limit($book->description, 50)}}</p>
                                 <p>
                                     <a href="{{url($book->file_path)}}" class="button color small"
-                                       style="background-color: green;" target="_blank">
+                                       style="background-color: green;" target="_blank" download>
                                                     <span
                                                         class="icon-download-alt"></span>
                                         تحميل</a>

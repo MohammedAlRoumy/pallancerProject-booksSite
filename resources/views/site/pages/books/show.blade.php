@@ -41,7 +41,7 @@
             <div class="row" style="margin-top: 30px;">
                 <p>
                     <a class="button color small"
-                       style="background-color: green;" href="{{url($book->file_path)}}" target="_blank">
+                       style="background-color: green;" href="{{url($book->file_path)}}" target="_blank" download>
                         <span class="icon-download-alt"></span>تحميل</a>
                     @auth()
                         <a class="button color small add_fav-icon" style="float: left">

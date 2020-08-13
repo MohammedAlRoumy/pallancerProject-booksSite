@@ -28,10 +28,10 @@
                         <p>تاريخ النشر : {{$book->year}} </p>
                         <p>
                             <a href="{{url($book->file_path)}}" class="button color small "
-                               style="background-color: green;">
-                                                    <span
-                                                        class="icon-download-alt"></span>
-                                تحميل </a>
+                               style="background-color: green;" download>
+                                                    <span class="icon-download-alt"></span>
+                                تحميل
+                            </a>
                             @auth()
                                 <a class="button color small add_fav-icon book__fav-btn" style="float: left">
                                 <span
