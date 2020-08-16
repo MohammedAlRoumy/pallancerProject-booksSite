@@ -111,8 +111,8 @@ class UserController extends Controller
         ]);
 
         $user->update($request->all());
-        $user->syncRoles(['admin', $request->role_id]);
-
+//        $user->syncRoles(['admin', $request->role_id]);
+        $user->syncRoles([ $request->role_id]);
         session()->flash('success', 'Data Added successfully');
         return redirect()->route('dashboard.users.index');
     }
