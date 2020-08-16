@@ -16,13 +16,13 @@
 @section('content')
 
     <div>
-        <h2>books</h2>
+        <h2>اتصل بنا</h2>
     </div>
 
     <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">Dashboard</a></li>
-        <li class="breadcrumb-item "><a href="{{route('dashboard.aboutus.index')}}">About Us</a></li>
-        <li class="breadcrumb-item active">show</li>
+        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">الرئيسية</a></li>
+        <li class="breadcrumb-item "><a href="{{route('dashboard.contactus.index')}}">اتصل بنا</a></li>
+        <li class="breadcrumb-item active">عرض</li>
     </ul>
 
     <div class="row">
@@ -34,7 +34,7 @@
                         <form class="form-horizontal">
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">Title</label>
+                                <label class="control-label col-md-3">العنوان</label>
                                 <div class="col-md-9">
                                     <input class="form-control" name="title" type="text" value="{{$contactus->title}}"
                                            disabled>
@@ -42,7 +42,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">Email</label>
+                                <label class="control-label col-md-3">البريد الالكتروني</label>
                                 <div class="col-md-9">
                                     <input class="form-control" name="email" type="email" value="{{$contactus->email}}"
                                            disabled>
@@ -50,7 +50,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">about us content</label>
+                                <label class="control-label col-md-3">الرسالة</label>
                                 <div class="col-md-9">
                                     <textarea name="content" class="form-control" disabled
                                     >{{$contactus->content}}</textarea>
@@ -59,7 +59,7 @@
 
                             <div class="form-group">
                                 &nbsp;&nbsp;&nbsp;<a class="btn btn-primary"
-                                                     href="{{route('dashboard.contactus.index')}}">back</a>
+                                                     href="{{route('dashboard.contactus.index')}}">رجوع</a>
                             </div>
                         </form>
                     </div>

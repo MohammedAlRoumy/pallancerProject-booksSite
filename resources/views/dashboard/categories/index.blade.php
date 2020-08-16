@@ -3,12 +3,12 @@
 @section('content')
 
     <div>
-        <h2>Categories</h2>
+        <h2>التصنيفات</h2>
     </div>
 
     <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Categories</li>
+        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">الرئيسية</a></li>
+        <li class="breadcrumb-item active">التصنيفات</li>
     </ul>
 
     <div class="row">
@@ -21,19 +21,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <input type="search" name="search" autofocus class="form-control"
-                                               placeholder="search" value="{{request()->search}}">
+                                               placeholder="بحث" value="{{request()->search}}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
-                                    <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> Search
+                                    <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> بحث
                                     </button>
                                     @if(auth()->user()->hasPermission('create_categories'))
                                         <a href="{{route('dashboard.categories.create')}}" class="btn btn-success"><i
-                                                class="fa fa-plus"></i> Add</a>
+                                                class="fa fa-plus"></i> إضافة</a>
                                     @else
                                         <a href="#" disabled="" class="btn btn-success"><i
-                                                class="fa fa-plus"></i> Add</a>
+                                                class="fa fa-plus"></i> إضافة</a>
                                     @endif
                                 </div>
                             </div>
@@ -49,10 +49,10 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Name</th>
-                                    <th>books count</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
+                                    <th>الاسم</th>
+                                    <th>عدد الكتب</th>
+                                    <th>الحالة</th>
+                                    <th>الإجراءات</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -70,11 +70,11 @@
                                             @if(auth()->user()->hasPermission('update_categories'))
                                                 <a href="{{route('dashboard.categories.edit',$category->id)}}"
                                                    class="btn btn-warning btn-sm"><i
-                                                        class="fa fa-edit"></i> Edit</a>
+                                                        class="fa fa-edit"></i> تعديل</a>
                                             @else
                                                 <a href="#" disabled=""
                                                    class="btn btn-warning btn-sm"><i
-                                                        class="fa fa-edit"></i> Edit</a>
+                                                        class="fa fa-edit"></i> تعديل</a>
                                             @endif
 
                                             @if(auth()->user()->hasPermission('delete_categories'))
@@ -84,12 +84,12 @@
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="btn btn-danger btn-sm delete"><i
-                                                            class="fa fa-trash"></i> Delete
+                                                            class="fa fa-trash"></i> حذف
                                                     </button>
                                                 </form>
                                             @else
                                                 <a href="#" class="btn btn-danger btn-sm " disabled=""><i
-                                                        class="fa fa-trash"></i> Delete</a>
+                                                        class="fa fa-trash"></i> حذف</a>
                                             @endif
                                         </td>
                                     </tr>
@@ -97,7 +97,7 @@
                                 </tbody>
                             </table>
                         @else
-                            <h3>Sorry no records found</h3>
+                            <h3>لايوجد أي بيانات</h3>
                         @endif
                     </div>
                 </div>

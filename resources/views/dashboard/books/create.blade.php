@@ -16,13 +16,13 @@
 @section('content')
 
     <div>
-        <h2>books</h2>
+        <h2>الكتب</h2>
     </div>
 
     <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">Dashboard</a></li>
-        <li class="breadcrumb-item "><a href="{{route('dashboard.books.index')}}">books</a></li>
-        <li class="breadcrumb-item active">Create</li>
+        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">الرئيسية</a></li>
+        <li class="breadcrumb-item "><a href="{{route('dashboard.books.index')}}">الكتب</a></li>
+        <li class="breadcrumb-item active">إضافة</li>
     </ul>
 
     <div class="row">
@@ -38,30 +38,28 @@
                             @include('dashboard.partials._errors')
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">book file</label>
+                                <label class="control-label col-md-3">ملف الكتاب</label>
                                 <div class="col-md-9">
                                     <input class="form-control" name="file" type="file">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">book name</label>
+                                <label class="control-label col-md-3">اسم الكتاب</label>
                                 <div class="col-md-9">
-                                    <input class="form-control"  name="name" type="text"
-                                          placeholder="Enter book name">
+                                    <input class="form-control"  name="name" type="text">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">book description</label>
+                                <label class="control-label col-md-3">وصف الكتاب</label>
                                 <div class="col-md-9">
-                                    <textarea name="description" class="form-control"
-                                              placeholder="enter book description"></textarea>
+                                    <textarea name="description" class="form-control"></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">book poster</label>
+                                <label class="control-label col-md-3">صورة الكتاب</label>
                                 <div class="col-md-9">
                                     <input class="form-control" name="poster" type="file">
                                 </div>
@@ -81,15 +79,15 @@
                             </div>--}}
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">book authors</label>
+                                <label class="control-label col-md-3">مؤلفو الكتاب</label>
                                 <div class="col-md-9">
                                     <input class="form-control"  name="authors" type="text"
-                                           placeholder="Enter book author" value="{{old('authors')}}">
+                                            value="{{old('authors')}}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">book categories</label>
+                                <label class="control-label col-md-3">تصنيفات الكتاب</label>
                                 <div class="col-md-9">
                                         <select name="categories[]" class="form-control select2" multiple style="width: 100%">
                                             @foreach($categories as $category)
@@ -102,7 +100,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">book year</label>
+                                <label class="control-label col-md-3">سنة النشر</label>
                                 <div class="col-md-9">
                                     <input class="form-control" name="year" type="text" value="{{old('year')}}">
                                 </div>
@@ -111,7 +109,7 @@
 
                             <div class="form-group">
                                 <button class="btn btn-primary"  type="submit"><i
-                                        class="fa fa-fw fa-lg fa-check-circle"></i>add
+                                        class="fa fa-fw fa-lg fa-check-circle"></i>إضافة
                                 </button>
                                 &nbsp;&nbsp;&nbsp;
                                 {{-- <a class="btn btn-secondary" href="{{route('dashboard.books.index')}}"><i

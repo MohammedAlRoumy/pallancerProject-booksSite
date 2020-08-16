@@ -2,12 +2,12 @@
 
 @section('content')
     <div>
-        <h2>books</h2>
+        <h2>الكتب</h2>
     </div>
 
     <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">Dashboard</a></li>
-        <li class="breadcrumb-item active">books</li>
+        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">الرئيسية</a></li>
+        <li class="breadcrumb-item active">الكتب</li>
     </ul>
 
     <div class="row">
@@ -20,14 +20,14 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <input type="search" name="search" autofocus class="form-control"
-                                               placeholder="search" value="{{request()->search}}">
+                                               placeholder="بحث" value="{{request()->search}}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <select name="category" class="form-control">
-                                            <option value="">All categories</option>
+                                            <option value="">جميع التصنيفات</option>
                                             @foreach($categories as $category)
                                                 <option value="{{$category->id}}" {{request()->$category == $category->id?'selected':''}}>{{$category->name}}</option>
                                             @endforeach
@@ -36,14 +36,14 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> Search
+                                    <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> بحث
                                     </button>
                                     @if(auth()->user()->hasPermission('create_books'))
                                         <a href="{{route('dashboard.books.create')}}" class="btn btn-success"><i
-                                                class="fa fa-plus"></i> Add</a>
+                                                class="fa fa-plus"></i> إضافة</a>
                                     @else
                                         <a href="#" class="btn btn-success" disabled=""><i
-                                                class="fa fa-plus"></i> Add</a>
+                                                class="fa fa-plus"></i> إضافة</a>
                                     @endif
                                 </div>
                             </div>
@@ -59,13 +59,13 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>image</th>
-                                    <th>Name</th>
-                                    <th>Authors</th>
-                                    <th>Categories</th>
-                                    <th>year</th>
-                                    <th>Count Users</th>
-                                    <th>Action</th>
+                                    <th>الصورة</th>
+                                    <th>الاسم</th>
+                                    <th>المؤلفون</th>
+                                    <th>التصنيفات</th>
+                                    <th>سنة النشر</th>
+                                    <th>مضاف للمفضلة</th>
+                                    <th>الاجراءات</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -94,10 +94,10 @@
                                             @if(auth()->user()->hasPermission('update_books'))
                                                 <a href="{{route('dashboard.books.edit',$book->id)}}"
                                                    class="btn btn-warning btn-sm"><i
-                                                        class="fa fa-edit"></i> Edit</a>
+                                                        class="fa fa-edit"></i> تعديل</a>
                                             @else
                                                 <a href="#" class="btn btn-warning btn-sm" disabled=""><i
-                                                        class="fa fa-edit"></i> Edit</a>
+                                                        class="fa fa-edit"></i> تعديل</a>
                                             @endif
                                             @if(auth()->user()->hasPermission('delete_books'))
                                                 <form action="{{route('dashboard.books.destroy',$book->id)}}"
@@ -106,12 +106,12 @@
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="btn btn-danger btn-sm delete"><i
-                                                            class="fa fa-trash"></i> Delete
+                                                            class="fa fa-trash"></i> حذف
                                                     </button>
                                                 </form>
                                             @else
                                                 <a href="#" class="btn btn-danger btn-sm" disabled=""><i
-                                                        class="fa fa-trash"></i> Delete
+                                                        class="fa fa-trash"></i> حذف
                                                 </a>
                                             @endif
                                         </td>

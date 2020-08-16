@@ -3,13 +3,13 @@
 @section('content')
 
     <div>
-        <h2>Users</h2>
+        <h2>الاعضاء</h2>
     </div>
 
     <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">Dashboard</a></li>
-        <li class="breadcrumb-item "><a href="{{route('dashboard.users.index')}}">Users</a></li>
-        <li class="breadcrumb-item active">Create</li>
+        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">الرئيسية</a></li>
+        <li class="breadcrumb-item "><a href="{{route('dashboard.users.index')}}">الاعضاء</a></li>
+        <li class="breadcrumb-item active">إضافة</li>
     </ul>
 
     <div class="row">
@@ -25,40 +25,38 @@
                             @include('dashboard.partials._errors')
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">user name</label>
+                                <label class="control-label col-md-3">الاسم</label>
                                 <div class="col-md-9">
-                                    <input class="form-control" name="name" type="text" placeholder="Enter user name"
+                                    <input class="form-control" name="name" type="text"
                                            value="{{old('name')}}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">user email</label>
+                                <label class="control-label col-md-3">البريد الالكتروني</label>
                                 <div class="col-md-9">
-                                    <input class="form-control" name="email" type="email" placeholder="Enter user email"
+                                    <input class="form-control" name="email" type="email"
                                            value="{{old('email')}}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">password</label>
+                                <label class="control-label col-md-3">كلمة المرور</label>
                                 <div class="col-md-9">
-                                    <input class="form-control" name="password" type="password"
-                                           placeholder="Enter user password">
+                                    <input class="form-control" name="password" type="password">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">password confirmation</label>
+                                <label class="control-label col-md-3">تأكيد كلمة المرور</label>
                                 <div class="col-md-9">
-                                    <input class="form-control" name="password_confirmation" type="password"
-                                           placeholder="Enter user password confirmation">
+                                    <input class="form-control" name="password_confirmation" type="password">
                                 </div>
                             </div>
 
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">Roles</label>
+                                <label class="control-label col-md-3">الصلاحيات</label>
                                 <div class="col-md-9">
                                     <select name="role_id" class="form-control">
                                         @foreach($roles as $role)
@@ -70,11 +68,11 @@
 
                             <div class="form-group">
                                 <button class="btn btn-primary" type="submit"><i
-                                        class="fa fa-fw fa-lg fa-check-circle"></i>Add
+                                        class="fa fa-fw fa-lg fa-check-circle"></i>إضافة
                                 </button>
                                 &nbsp;&nbsp;&nbsp;
                                 <a class="btn btn-secondary" href="{{route('dashboard.users.index')}}"><i
-                                        class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
+                                        class="fa fa-fw fa-lg fa-times-circle"></i>إلغاء</a>
                             </div>
                         </form>
                     </div>

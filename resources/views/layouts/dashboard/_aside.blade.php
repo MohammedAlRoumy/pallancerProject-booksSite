@@ -9,51 +9,51 @@
     </div>
     <ul class="app-menu">
         <li><a class="app-menu__item active" href="{{route('dashboard.welcome')}}"><i
-                    class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
+                    class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">الرئيسية</span></a></li>
 
         @if(auth()->user()->hasPermission('read_categories'))
             <li><a class="app-menu__item" href="{{route('dashboard.categories.index')}}"><i
-                        class="app-menu__icon fa fa-list"></i><span class="app-menu__label">Categories</span></a></li>
+                        class="app-menu__icon fa fa-list"></i><span class="app-menu__label">التصنيفات</span></a></li>
         @endif
 
         @if(auth()->user()->hasPermission('read_authors'))
             <li><a class="app-menu__item" href="{{route('dashboard.authors.index')}}"><i
-                        class="app-menu__icon fa fa-pencil"></i><span class="app-menu__label">authors</span></a></li>
+                        class="app-menu__icon fa fa-pencil"></i><span class="app-menu__label">المؤلفون</span></a></li>
         @endif
 
         @if(auth()->user()->hasPermission('read_books'))
             <li><a class="app-menu__item" href="{{route('dashboard.books.index')}}"><i
-                        class="app-menu__icon fa fa-book"></i><span class="app-menu__label">books</span></a></li>
+                        class="app-menu__icon fa fa-book"></i><span class="app-menu__label">الكتب</span></a></li>
         @endif
 
         @if(auth()->user()->hasPermission('read_roles'))
             <li><a class="app-menu__item" href="{{route('dashboard.roles.index')}}"><i
-                        class="app-menu__icon fa fa-anchor"></i><span class="app-menu__label">Roles</span></a></li>
+                        class="app-menu__icon fa fa-anchor"></i><span class="app-menu__label">الصلاحيات</span></a></li>
         @endif
 
         @if(auth()->user()->hasPermission('read_users'))
             <li><a class="app-menu__item" href="{{route('dashboard.users.index')}}"><i
-                        class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Users</span></a></li>
+                        class="app-menu__icon fa fa-users"></i><span class="app-menu__label">الأعضاء</span></a></li>
         @endif
 
         @if(auth()->user()->hasPermission('read_aboutus'))
             <li><a class="app-menu__item" href="{{route('dashboard.aboutus.index')}}"><i
-                        class="app-menu__icon fa fa-pencil"></i><span class="app-menu__label">about us</span></a></li>
+                        class="app-menu__icon fa fa-pencil"></i><span class="app-menu__label">من نحن</span></a></li>
         @endif
 
         @if(auth()->user()->hasPermission('read_contactus'))
             <li><a class="app-menu__item" href="{{route('dashboard.contactus.index')}}"><i
-                        class="app-menu__icon fa fa-pencil"></i><span class="app-menu__label">contact us</span></a></li>
+                        class="app-menu__icon fa fa-pencil"></i><span class="app-menu__label">اتصل بنا</span></a></li>
         @endif
 
 
     @if(auth()->user()->hasPermission('read_settings'))
                     <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
-                                class="app-menu__icon fa fa-gear"></i><span class="app-menu__label">Settings</span><i
+                                class="app-menu__icon fa fa-gear"></i><span class="app-menu__label">الإعدادات</span><i
                                 class="treeview-indicator fa fa-angle-right"></i></a>
                         <ul class="treeview-menu">
                             <li><a class="treeview-item" href="{{route('dashboard.settings.social_links')}}"><i class="icon fa fa-circle-o"></i>
-                                    social links</a></li>
+                                    روابط التواصل الإجتماعي</a></li>
                         </ul>
                     </li>
         @endif

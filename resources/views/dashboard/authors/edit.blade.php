@@ -2,14 +2,14 @@
 
 @section('content')
     <div>
-        <h2>authors</h2>
+        <h2>المؤلفون</h2>
     </div>
 
 
     <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">Dashboard</a></li>
-        <li class="breadcrumb-item "><a href="{{route('dashboard.authors.index')}}">authors</a></li>
-        <li class="breadcrumb-item active">Edit</li>
+        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">الرئيسية</a></li>
+        <li class="breadcrumb-item "><a href="{{route('dashboard.authors.index')}}">المؤلفون</a></li>
+        <li class="breadcrumb-item active">تعديل</li>
     </ul>
 
     <div class="row">
@@ -32,23 +32,22 @@
                             @include('dashboard.partials._errors')
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">author name</label>
+                                <label class="control-label col-md-3">اسم المؤلف</label>
                                 <div class="col-md-9">
                                     <input class="form-control" id="author__name" name="name" type="text"
-                                           value="{{old('name',$author->name)}}"      placeholder="Enter author name">
+                                           value="{{old('name',$author->name)}}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">author bio</label>
+                                <label class="control-label col-md-3">سيرة المؤلف</label>
                                 <div class="col-md-9">
-                                    <textarea name="bio" class="form-control"
-                                              placeholder="enter author bio">{{old('description',$author->bio)}}</textarea>
+                                    <textarea name="bio" class="form-control">{{old('description',$author->bio)}}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">author image</label>
+                                <label class="control-label col-md-3">صورة المؤلف</label>
                                 <div class="col-md-9">
                                     <input class="form-control" name="image" type="file">
                                     <img src="{{$author->image_path}}" style="width: 255px;height: 378px; margin-top:10px;" alt="">
@@ -57,7 +56,7 @@
 
 
                             <div class="form-group">
-                                <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-edit"></i>Edit
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-edit"></i>تعديل
                                 </button>
                             </div>
                         </form>

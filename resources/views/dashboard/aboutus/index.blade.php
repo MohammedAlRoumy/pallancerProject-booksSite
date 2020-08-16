@@ -20,9 +20,9 @@
     </div>
 
     <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">Dashboard</a></li>
-        <li class="breadcrumb-item "><a href="{{route('dashboard.aboutus.index')}}">About Us</a></li>
-        <li class="breadcrumb-item active">Create</li>
+        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">الرئيسية</a></li>
+        <li class="breadcrumb-item "><a href="{{route('dashboard.aboutus.index')}}">من نحن</a></li>
+        <li class="breadcrumb-item active">إضافة</li>
     </ul>
 
     <div class="row">
@@ -39,15 +39,14 @@
 
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">about us content</label>
+                                <label class="control-label col-md-3">المحتوى</label>
                                 <div class="col-md-9">
-                                    <textarea name="aboutus" class="form-control"
-                                              placeholder="enter about us content">{{setting('aboutus')}}</textarea>
+                                    <textarea name="aboutus" class="form-control">{{setting('aboutus')}}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">address</label>
+                                <label class="control-label col-md-3">العنوان</label>
                                 <div class="col-md-9">
                                     <input class="form-control"  name="address" type="text"
                                            placeholder="Enter the address" value="{{setting('address')}}">
@@ -55,7 +54,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">phone</label>
+                                <label class="control-label col-md-3">الهاتف</label>
                                 <div class="col-md-9">
                                     <input class="form-control"  name="phone" type="text"
                                            placeholder="Enter the phone" value="{{setting('phone')}}">
@@ -63,7 +62,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">email</label>
+                                <label class="control-label col-md-3">البريد الإلكتروني</label>
                                 <div class="col-md-9">
                                     <input class="form-control"  name="email" type="email"
                                            placeholder="Enter author name" value="{{setting('email')}}">
@@ -72,7 +71,7 @@
 
                             <div class="form-group">
                                 <button class="btn btn-primary"  type="submit"><i
-                                        class="fa fa-fw fa-lg fa-check-circle"></i>add
+                                        class="fa fa-fw fa-lg fa-check-circle"></i>إضافة
                                 </button>
                                 &nbsp;&nbsp;&nbsp;
                             </div>

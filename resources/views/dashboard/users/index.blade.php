@@ -2,12 +2,12 @@
 
 @section('content')
     <div>
-        <h2>Users</h2>
+        <h2>الأعضاء</h2>
     </div>
 
     <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Users</li>
+        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">الرئيسية</a></li>
+        <li class="breadcrumb-item active">الاعضاء</li>
     </ul>
 
     <div class="row">
@@ -21,13 +21,13 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <input type="search" name="search" autofocus class="form-control"
-                                               placeholder="search" value="{{request()->search}}">
+                                               placeholder="بحث" value="{{request()->search}}">
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <select name="role_id" class="form-control">
-                                        <option value="">All roles</option>
+                                        <option value="">جميع الصلاحيات</option>
                                         @foreach($roles as $role)
                                             <option
                                                 value="{{$role->id}}" {{request()->role_id == $role->id ?'selected':''}}>
@@ -38,14 +38,14 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> Search
+                                    <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> بحث
                                     </button>
                                     @if(auth()->user()->hasPermission('create_users'))
                                         <a href="{{route('dashboard.users.create')}}" class="btn btn-success"><i
-                                                class="fa fa-plus"></i> Add</a>
+                                                class="fa fa-plus"></i> إضافة</a>
                                     @else
                                         <a href="#" class="btn btn-success" disabled=""><i
-                                                class="fa fa-plus"></i> Add</a>
+                                                class="fa fa-plus"></i> إضافة</a>
                                     @endif
                                 </div>
                             </div>
@@ -61,10 +61,10 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Roles</th>
-                                    <th>Action</th>
+                                    <th>الاسم</th>
+                                    <th>البريد الإلكتروني</th>
+                                    <th>الصلاحيات</th>
+                                    <th>الاجراءات</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -86,22 +86,22 @@
                                                 @if($user->hasRole('super_admin'))
                                                     <a href="#"
                                                        class="btn btn-warning btn-sm" disabled=""><i
-                                                            class="fa fa-edit"></i> Edit</a>
+                                                            class="fa fa-edit"></i> تعديل</a>
                                                 @else
                                                     <a href="{{route('dashboard.users.edit',$user->id)}}"
                                                        class="btn btn-warning btn-sm"><i
-                                                            class="fa fa-edit"></i> Edit</a>
+                                                            class="fa fa-edit"></i> تعديل</a>
                                                 @endif
                                             @else
                                                 <a href="#"
                                                    class="btn btn-warning btn-sm" disabled=""><i
-                                                        class="fa fa-edit"></i> Edit</a>
+                                                        class="fa fa-edit"></i> تعديل</a>
                                             @endif
 
                                             @if(auth()->user()->hasPermission('delete_users'))
                                                 @if($user->hasRole('super_admin'))
                                                     <a href="#" class="btn btn-danger btn-sm " disabled=""><i
-                                                            class="fa fa-trash"></i> Delete</a>
+                                                            class="fa fa-trash"></i> حذف</a>
                                                 @else
 
                                                     <form action="{{route('dashboard.users.destroy',$user->id)}}"
@@ -110,13 +110,13 @@
                                                         @csrf
                                                         @method('delete')
                                                         <button type="submit" class="btn btn-danger btn-sm delete"><i
-                                                                class="fa fa-trash"></i> Delete
+                                                                class="fa fa-trash"></i> حذف
                                                         </button>
                                                     </form>
                                                 @endif
                                             @else
                                                 <a href="#" class="btn btn-danger btn-sm " disabled=""><i
-                                                        class="fa fa-trash"></i> Delete</a>
+                                                        class="fa fa-trash"></i> حذف</a>
                                             @endif
                                         </td>
                                     </tr>
@@ -124,7 +124,7 @@
                                 </tbody>
                             </table>
                         @else
-                            <h3>Sorry no records found</h3>
+                            <h3>لا توجد بيانات</h3>
                         @endif
                     </div>
                 </div>

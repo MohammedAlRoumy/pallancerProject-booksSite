@@ -3,13 +3,13 @@
 @section('content')
 
     <div>
-        <h2>Roles</h2>
+        <h2>الصلاحيات</h2>
     </div>
 
     <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">Dashboard</a></li>
-        <li class="breadcrumb-item "><a href="{{route('dashboard.roles.index')}}">Roles</a></li>
-        <li class="breadcrumb-item active">Create</li>
+        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">الرئيسية</a></li>
+        <li class="breadcrumb-item "><a href="{{route('dashboard.roles.index')}}">الصلاحيات</a></li>
+        <li class="breadcrumb-item active">إضافة</li>
     </ul>
 
     <div class="row">
@@ -25,22 +25,21 @@
                             @include('dashboard.partials._errors')
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">role name</label>
+                                <label class="control-label col-md-3">اسم الصلاحية</label>
                                 <div class="col-md-9">
-                                    <input class="form-control" name="name" type="text" placeholder="Enter role name"
-                                           value="{{old('name')}}">
+                                    <input class="form-control" name="name" type="text" value="{{old('name')}}">
                                 </div>
                             </div>
 
                             {{--permissions--}}
                             <div class="form-group">
-                                <h4>Permissions</h4>
+                                <h4>الاذونات</h4>
                                 <table class="table table-hover">
                                     <thead>
                                     <tr>
                                         <th style="width: 5%;">#</th>
-                                        <th style="width: 20%;">Model</th>
-                                        <th>Permissions</th>
+                                        <th style="width: 20%;">النموذج</th>
+                                        <th>الاذونات</th>
                                     </tr>
                                     </thead>
 
@@ -85,11 +84,11 @@
 
                             <div class="form-group">
                                 <button class="btn btn-primary" type="submit"><i
-                                        class="fa fa-fw fa-lg fa-check-circle"></i>Add
+                                        class="fa fa-fw fa-lg fa-check-circle"></i>إضافة
                                 </button>
                                 &nbsp;&nbsp;&nbsp;
                                 <a class="btn btn-secondary" href="{{route('dashboard.roles.index')}}"><i
-                                        class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
+                                        class="fa fa-fw fa-lg fa-times-circle"></i>إلغاء</a>
                             </div>
                         </form>
                     </div>

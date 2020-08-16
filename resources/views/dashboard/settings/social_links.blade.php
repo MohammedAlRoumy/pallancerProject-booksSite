@@ -3,12 +3,12 @@
 @section('content')
 
     <div>
-        <h2>settings</h2>
+        <h2>الاعدادات</h2>
     </div>
 
     <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">Dashboard</a></li>
-        <li class="breadcrumb-item active">Social links</li>
+        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">الرئيسية</a></li>
+        <li class="breadcrumb-item active">روابط مواقع التواصل الاجتماعي</li>
     </ul>
 
     <div class="row">
@@ -41,11 +41,11 @@
 
                             <div class="form-group">
                                 <button class="btn btn-primary" type="submit"><i
-                                        class="fa fa-fw fa-lg fa-check-circle"></i>Add
+                                        class="fa fa-fw fa-lg fa-check-circle"></i>إضافة
                                 </button>
                                 &nbsp;&nbsp;&nbsp;
                                 <a class="btn btn-secondary" href="{{route('dashboard.welcome')}}"><i
-                                        class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
+                                        class="fa fa-fw fa-lg fa-times-circle"></i>إلغاء</a>
                             </div>
                         </form>
                     </div>

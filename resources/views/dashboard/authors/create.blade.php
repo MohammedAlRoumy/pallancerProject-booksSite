@@ -16,13 +16,13 @@
 @section('content')
 
     <div>
-        <h2>authors</h2>
+        <h2>المؤلفون</h2>
     </div>
 
     <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">Dashboard</a></li>
-        <li class="breadcrumb-item "><a href="{{route('dashboard.authors.index')}}">authors</a></li>
-        <li class="breadcrumb-item active">Create</li>
+        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">الرئيسية</a></li>
+        <li class="breadcrumb-item "><a href="{{route('dashboard.authors.index')}}">المؤفون</a></li>
+        <li class="breadcrumb-item active">إضافة</li>
     </ul>
 
     <div class="row">
@@ -39,23 +39,21 @@
 
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">author name</label>
+                                <label class="control-label col-md-3">اسم المؤلف </label>
                                 <div class="col-md-9">
-                                    <input class="form-control"  name="name" type="text"
-                                          placeholder="Enter author name">
+                                    <input class="form-control"  name="name" type="text">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">author bio</label>
+                                <label class="control-label col-md-3">سيرة المؤلف</label>
                                 <div class="col-md-9">
-                                    <textarea name="bio" class="form-control"
-                                              placeholder="enter author bio"></textarea>
+                                    <textarea name="bio" class="form-control"></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="control-label col-md-3">author image</label>
+                                <label class="control-label col-md-3">صورة المؤلف</label>
                                 <div class="col-md-9">
                                     <input class="form-control" name="image" type="file">
                                 </div>
@@ -64,7 +62,7 @@
 
                             <div class="form-group">
                                 <button class="btn btn-primary"  type="submit"><i
-                                        class="fa fa-fw fa-lg fa-check-circle"></i>add
+                                        class="fa fa-fw fa-lg fa-check-circle"></i>إضافة
                                 </button>
                                 &nbsp;&nbsp;&nbsp;
                                 {{-- <a class="btn btn-secondary" href="{{route('dashboard.authors.index')}}"><i

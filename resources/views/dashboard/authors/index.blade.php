@@ -2,12 +2,12 @@
 
 @section('content')
     <div>
-        <h2>authors</h2>
+        <h2>المؤلفون</h2>
     </div>
 
     <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">Dashboard</a></li>
-        <li class="breadcrumb-item active">authors</li>
+        <li class="breadcrumb-item"><a href="{{route('dashboard.welcome')}}">الرئيسية</a></li>
+        <li class="breadcrumb-item active">المؤلفون</li>
     </ul>
 
     <div class="row">
@@ -20,7 +20,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <input type="search" name="search" autofocus class="form-control"
-                                               placeholder="search" value="{{request()->search}}">
+                                               placeholder="بحث" value="{{request()->search}}">
                                     </div>
                                 </div>
 
@@ -38,14 +38,14 @@
 --}}
 
                                 <div class="col-md-4">
-                                    <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> Search
+                                    <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> بحث
                                     </button>
                                     @if(auth()->user()->hasPermission('create_authors'))
                                         <a href="{{route('dashboard.authors.create')}}" class="btn btn-success"><i
-                                                class="fa fa-plus"></i> Add</a>
+                                                class="fa fa-plus"></i> إضافة</a>
                                     @else
                                         <a href="#" class="btn btn-success" disabled=""><i
-                                                class="fa fa-plus"></i> Add</a>
+                                                class="fa fa-plus"></i> إضافة</a>
                                     @endif
                                 </div>
                             </div>
@@ -61,10 +61,10 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Name</th>
-                                    <th>bio</th>
-                                    <th>image</th>
-                                    <th>Action</th>
+                                    <th>الاسم</th>
+                                    <th>سيرة الؤلف</th>
+                                    <th>الصورة</th>
+                                    <th>الاجراءات</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -80,10 +80,10 @@
                                             @if(auth()->user()->hasPermission('update_authors'))
                                                 <a href="{{route('dashboard.authors.edit',$author->id)}}"
                                                    class="btn btn-warning btn-sm"><i
-                                                        class="fa fa-edit"></i> Edit</a>
+                                                        class="fa fa-edit"></i> تعديل</a>
                                             @else
                                                 <a href="#" class="btn btn-warning btn-sm" disabled=""><i
-                                                        class="fa fa-edit"></i> Edit</a>
+                                                        class="fa fa-edit"></i> تعديل</a>
                                             @endif
                                             @if(auth()->user()->hasPermission('delete_authors'))
                                                 <form action="{{route('dashboard.authors.destroy',$author->id)}}"
@@ -92,12 +92,12 @@
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="btn btn-danger btn-sm delete"><i
-                                                            class="fa fa-trash"></i> Delete
+                                                            class="fa fa-trash"></i> حذف
                                                     </button>
                                                 </form>
                                             @else
                                                 <a href="#" class="btn btn-danger btn-sm" disabled=""><i
-                                                        class="fa fa-trash"></i> Delete
+                                                        class="fa fa-trash"></i> حذف
                                                 </a>
                                             @endif
                                         </td>
