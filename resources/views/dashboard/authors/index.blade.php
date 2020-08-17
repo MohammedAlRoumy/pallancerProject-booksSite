@@ -23,7 +23,6 @@
                                                placeholder="بحث" value="{{request()->search}}">
                                     </div>
                                 </div>
-
 {{--
                                 <div class="col-md-4">
                                     <div class="form-group">
@@ -36,7 +35,6 @@
                                     </div>
                                 </div>
 --}}
-
                                 <div class="col-md-4">
                                     <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> بحث
                                     </button>

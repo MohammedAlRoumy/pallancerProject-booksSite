@@ -49,7 +49,6 @@ class Book extends Model
     {
         return $query->when($search, function ($q) use ($search) {
             return $q->where('name', 'like', "%$search%")
-                ->orWhere('description', 'like', "%$search%")
                 ->orWhere('year', 'like', "%$search%");
         });
 

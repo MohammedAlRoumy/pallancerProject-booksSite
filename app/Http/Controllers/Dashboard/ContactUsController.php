@@ -15,7 +15,7 @@ class ContactUsController extends Controller
      */
     public function index()
     {
-        $contactus = ContactUs::paginate();
+        $contactus = ContactUs::whenSearch(request()->search)->paginate();
         return view('dashboard.contactus.index',compact('contactus'));
     }
 
